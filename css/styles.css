@@ -1,0 +1,18 @@
+body{
+    background-color: #ebead2;
+}
+.tox-tinymce {
+    margin-bottom: 15px;
+}
+
+.btn-secondary {
+    margin-right: 10px;
+}
+
+.btn-align{
+    text-align: right;
+}
+
+.last-col {
+    width: 200px;
+}
