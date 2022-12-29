@@ -16,3 +16,7 @@ body{
 .last-col {
     width: 200px;
 }
+
+.btn-margin{
+    margin-right: 10px;
+}
