@@ -18,7 +18,7 @@
             <th scope="col"><strong>Headline</strong></th>
             <th scope="col"><strong>Erstellungsdatum</strong></th>
             <th class="last-col" scope="col">
-                <button class="btn btn-primary btn-sm">Neue Stellenanzeige</button>
+                <a href="form.php" class="btn btn-primary btn-sm">Neue Stellenanzeige</a>
             </th>
         </tr>
         </thead>
@@ -38,7 +38,7 @@
                 $newDate=date_create($date);
                 echo "<td>" . date_format($newDate,"d.m.y") . "</td>";
                 echo "<td>";
-                echo "<button class='btn btn-primary btn-sm btn-margin'>Bearbeiten</button>";
+                echo "<a href='form.php?id=".$id."' class='btn btn-primary btn-sm btn-margin'>Bearbeiten</a>";
                 echo "<button class='btn btn-secondary btn-sm'>Löschen</button>";
                 echo "</td>";
                 echo "</tr>";
