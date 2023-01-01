@@ -1,3 +1,13 @@
+<?php
+if ( isset($_GET["action"]) ) {
+    include 'config/database.php';
+
+    $sql = "DELETE FROM anzeigen WHERE id=?";
+    $stmt= $con->prepare($sql);
+    $stmt->execute([$_GET['id']]);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +18,14 @@
           crossorigin="anonymous">
     <link href="css/styles.css" rel="stylesheet">
     <title>considero ADMIN-BEREICH</title>
+    <script>
+        function loeschen (id) {
+            var check = confirm("Wollen Sie diese Stellenanzeige wirklich loeschen?");
+            if (check === true ) {
+                document.location.href = "index.php?action=delete&id="+id;
+            }
+        }
+    </script>
 </head>
 <body>
 <div class="container">
@@ -36,10 +54,10 @@
                 echo "<tr>";
                 echo "<td>" . $headline . "</td>";
                 $newDate=date_create($date);
-                echo "<td>" . date_format($newDate,"d.m.y") . "</td>";
+                echo "<td>" . date_format($newDate,"d.m.Y") . "</td>";
                 echo "<td>";
                 echo "<a href='form.php?id=".$id."' class='btn btn-primary btn-sm btn-margin'>Bearbeiten</a>";
-                echo "<button class='btn btn-secondary btn-sm'>Löschen</button>";
+                echo "<button class='btn btn-secondary btn-sm' onclick='loeschen(".$id.")'>Löschen</button>";
                 echo "</td>";
                 echo "</tr>";
             }

@@ -3,7 +3,7 @@
 $host ="localhost";
 $username = "root";
 $password = "root";
-$db_name = "considero";
+$db_name = "considero-utf8";
 
 
 try {
